@@ -13,6 +13,10 @@ var _APP_INFO = {
     version: '1.0'
 }
 
+window.onerror = function () {
+    Raven.showReportDialog();
+}
+
 Raven.config(sentryUrl, {
     release: _APP_INFO.version,
     tags: {
